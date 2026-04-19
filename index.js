@@ -1,3 +1,5 @@
+require('dotenv').config(); 
+
 const { Client, GatewayIntentBits } = require('discord.js');
 
 const client = new Client({
@@ -14,13 +16,13 @@ client.once('ready', () => {
 
 client.on('messageCreate', (message) => {
   if (message.author.bot) return;
-
   if (message.content === '!ping') {
     message.reply('Pong! 🏓');
   }
 });
 
 console.log('TOKEN carregado:', process.env.TOKEN ? 'SIM' : 'NÃO');
+
 client.login(process.env.TOKEN)
   .then(() => console.log('Login bem sucedido!'))
   .catch(err => console.error('Erro no login:', err.message));
