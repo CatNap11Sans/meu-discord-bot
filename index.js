@@ -20,8 +20,8 @@ client.on('messageCreate', (message) => {
   }
 });
 
+console.log('TOKEN carregado:', process.env.TOKEN ? 'SIM' : 'NÃO');
 client.login(process.env.TOKEN);
 
-// Mantém o bot acordado no plano gratuito
 const http = require('http');
 http.createServer((req, res) => res.end('Bot online!')).listen(8080);
